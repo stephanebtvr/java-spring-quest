@@ -1,0 +1,100 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "type": "com.javaquest.backend.config.AppProperties",
+      "description": "Propriétés personnalisées de l'application JavaQuest",
+      "sourceType": "com.javaquest.backend.config.AppProperties"
+    },
+    {
+      "name": "app.quiz",
+      "type": "com.javaquest.backend.config.AppProperties$Quiz",
+      "description": "Configuration des quiz",
+      "sourceType": "com.javaquest.backend.config.AppProperties"
+    },
+    {
+      "name": "app.pagination",
+      "type": "com.javaquest.backend.config.AppProperties$Pagination",
+      "description": "Configuration de la pagination",
+      "sourceType": "com.javaquest.backend.config.AppProperties"
+    },
+    {
+      "name": "jwt",
+      "type": "com.javaquest.backend.config.JwtProperties",
+      "description": "Configuration JWT"
+    },
+    {
+      "name": "cors",
+      "description": "Configuration CORS personnalisée"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.name",
+      "type": "java.lang.String",
+      "description": "Nom de l'application",
+      "defaultValue": "JavaQuest"
+    },
+    {
+      "name": "app.version",
+      "type": "java.lang.String",
+      "defaultValue": "0.0.1-SNAPSHOT"
+    },
+    { "name": "app.description", "type": "java.lang.String" },
+    {
+      "name": "app.quiz.max-questions",
+      "type": "java.lang.Integer",
+      "defaultValue": 50
+    },
+    {
+      "name": "app.quiz.default-time-per-question",
+      "type": "java.lang.Integer",
+      "defaultValue": 60
+    },
+    {
+      "name": "app.pagination.default-page-size",
+      "type": "java.lang.Integer",
+      "defaultValue": 20
+    },
+    {
+      "name": "app.pagination.max-page-size",
+      "type": "java.lang.Integer",
+      "defaultValue": 100
+    },
+
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "Clé secrète JWT"
+    },
+    { "name": "jwt.expiration", "type": "java.lang.Long" },
+    { "name": "jwt.refresh-expiration", "type": "java.lang.Long" },
+    {
+      "name": "cors.allowed-origins",
+      "type": "java.util.List<java.lang.String>",
+      "defaultValue": "http://localhost:4200,http://localhost:3000"
+    },
+    {
+      "name": "cors.allowed-methods",
+      "type": "java.util.List<java.lang.String>",
+      "defaultValue": "GET,POST,PUT,DELETE,OPTIONS,PATCH"
+    },
+    {
+      "name": "cors.allowed-headers",
+      "type": "java.util.List<java.lang.String>",
+      "defaultValue": "*"
+    },
+    {
+      "name": "cors.exposed-headers",
+      "type": "java.util.List<java.lang.String>",
+      "defaultValue": "Authorization"
+    },
+    {
+      "name": "cors.allow-credentials",
+      "type": "java.lang.Boolean",
+      "defaultValue": true
+    },
+    { "name": "cors.max-age", "type": "java.lang.Long", "defaultValue": 3600 }
+  ],
+  "hints": []
+}
