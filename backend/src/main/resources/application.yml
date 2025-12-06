@@ -9,9 +9,9 @@ spring:
   # Configuration Base de Données PostgreSQL
   # ==========================================
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/javaquestdb}
+    username: ${SPRING_DATASOURCE_USERNAME:javaquestuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:javaquestpassword}
     driver-class-name: org.postgresql.Driver
 
   # ==========================================
@@ -53,7 +53,7 @@ spring:
 # Configuration Serveur
 # ==========================================
 server:
-  port: ${SERVER_PORT}
+  port: ${SERVER_PORT:8080}
 
   compression:
     enabled: true
@@ -63,7 +63,7 @@ server:
 # Configuration JWT (Sécurité)
 # ==========================================
 jwt:
-  secret: ${JWT_SECRET}
+  secret: ${JWT_SECRET:fallback-secret-dev-only-1234567890abcdef}
   expiration: 86400000 # 24 heures en millisecondes
   refresh-expiration: 604800000 # 7 jours
 
@@ -71,7 +71,7 @@ jwt:
 # Configuration CORS
 # ==========================================
 cors:
-  allowed-origins: ${CORS_ORIGINS}
+  allowed-origins: ${CORS_ORIGIN:http://localhost:4200}
   allowed-methods: GET,POST,PUT,DELETE,OPTIONS,PATCH
   allowed-headers: "*"
   allow-credentials: true
